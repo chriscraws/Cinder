@@ -119,3 +119,5 @@ export( TARGETS cinder FILE ${PROJECT_BINARY_DIR}/${CINDER_LIB_DIRECTORY}/cinder
 configure_file( ${CMAKE_CURRENT_LIST_DIR}/modules/cinderConfig.buildtree.cmake.in
     "${CMAKE_ARCHIVE_OUTPUT_DIRECTORY}/cinderConfig.cmake"
 )
+
+install( TARGETS cinder ARCHIVE DESTINATION cinder )
