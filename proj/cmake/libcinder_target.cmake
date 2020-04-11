@@ -126,6 +126,6 @@ configure_file( ${CMAKE_CURRENT_LIST_DIR}/modules/cinderConfig.buildtree.cmake.i
     "${CMAKE_ARCHIVE_OUTPUT_DIRECTORY}/cinderConfig.cmake"
 )
 
-install( TARGETS cinder EXPORT cinder DESTINATION lib )
+install( TARGETS cinder EXPORT cinderExport DESTINATION lib )
 install( DIRECTORY include DESTINATION . )
-install( EXPORT cinder DESTINATION . FILE cinderConfig.cmake ) 
+install( EXPORT cinderExport DESTINATION . FILE cinderConfig.cmake ) 
