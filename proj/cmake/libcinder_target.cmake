@@ -16,8 +16,14 @@ add_library(
     ${CINDER_SRC_FILES}
 )
 
-target_include_directories( cinder BEFORE INTERFACE ${CINDER_INCLUDE_USER_INTERFACE} )
-target_include_directories( cinder SYSTEM BEFORE INTERFACE ${CINDER_INCLUDE_SYSTEM_INTERFACE} )
+target_include_directories( cinder BEFORE INTERFACE
+	$<BUILD_INTERFACE:${CINDER_INCLUDE_USER_INTERFACE}>
+	$<INSTALL_INTERFACE:include>
+)
+target_include_directories( cinder SYSTEM BEFORE INTERFACE
+  $<BUILD_INTERFACE:${CINDER_INCLUDE_SYSTEM_INTERFACE}>
+	$<INSTALL_INTERFACE:include>
+)
 
 target_include_directories( cinder BEFORE PRIVATE ${CINDER_INCLUDE_USER_PRIVATE} )
 target_include_directories( cinder SYSTEM BEFORE PRIVATE ${CINDER_INCLUDE_SYSTEM_PRIVATE} )
@@ -120,5 +126,6 @@ configure_file( ${CMAKE_CURRENT_LIST_DIR}/modules/cinderConfig.buildtree.cmake.i
     "${CMAKE_ARCHIVE_OUTPUT_DIRECTORY}/cinderConfig.cmake"
 )
 
-install( TARGETS cinder ARCHIVE DESTINATION lib )
+install( TARGETS cinder EXPORT cinder DESTINATION lib )
 install( DIRECTORY include DESTINATION . )
+install( EXPORT cinder DESTINATION . ) 
