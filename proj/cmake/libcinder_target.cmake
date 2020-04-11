@@ -121,3 +121,4 @@ configure_file( ${CMAKE_CURRENT_LIST_DIR}/modules/cinderConfig.buildtree.cmake.i
 )
 
 install( TARGETS cinder ARCHIVE DESTINATION lib )
+install( DIRECTORY include DESTINATION . )
