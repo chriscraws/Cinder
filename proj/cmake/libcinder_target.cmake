@@ -128,4 +128,4 @@ configure_file( ${CMAKE_CURRENT_LIST_DIR}/modules/cinderConfig.buildtree.cmake.i
 
 install( TARGETS cinder EXPORT cinder DESTINATION lib )
 install( DIRECTORY include DESTINATION . )
-install( EXPORT cinder DESTINATION . ) 
+install( EXPORT cinder DESTINATION . FILE cinderConfig.cmake ) 
