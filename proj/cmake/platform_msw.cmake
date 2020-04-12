@@ -56,30 +56,30 @@ if( NOT CINDER_DISABLE_VIDEO )
 		set( GST_ROOT $ENV{GSTREAMER_1_0_ROOT_X86_64} )
 		if( GST_ROOT )
 			list( APPEND CINDER_LIBS_DEPENDS 
-						${GST_ROOT}/lib/gstreamer-1.0.lib
-						${GST_ROOT}/lib/gstapp-1.0.lib
-						${GST_ROOT}/lib/gstvideo-1.0.lib
-						${GST_ROOT}/lib/gstbase-1.0.lib
-						${GST_ROOT}/lib/gstnet-1.0.lib
-						${GST_ROOT}/lib/gstaudio-1.0.lib
-						${GST_ROOT}/lib/gstgl-1.0.lib
-						${GST_ROOT}/lib/gobject-2.0.lib
-						${GST_ROOT}/lib/gmodule-2.0.lib
-						${GST_ROOT}/lib/gthread-2.0.lib
-						${GST_ROOT}/lib/glib-2.0.lib
-						${GST_ROOT}/lib/gio-2.0.lib )
+						"${GST_ROOT}lib\\gstreamer-1.0.lib"
+						"${GST_ROOT}lib\\gstapp-1.0.lib"
+						"${GST_ROOT}lib\\gstvideo-1.0.lib"
+						"${GST_ROOT}lib\\gstbase-1.0.lib"
+						"${GST_ROOT}lib\\gstnet-1.0.lib"
+						"${GST_ROOT}lib\\gstaudio-1.0.lib"
+						"${GST_ROOT}lib\\gstgl-1.0.lib"
+						"${GST_ROOT}lib\\gobject-2.0.lib"
+						"${GST_ROOT}lib\\gmodule-2.0.lib"
+						"${GST_ROOT}lib\\gthread-2.0.lib"
+						"${GST_ROOT}lib\\glib-2.0.lib"
+						"${GST_ROOT}lib\\gio-2.0.lib" )
 
 			list( APPEND CINDER_INCLUDE_SYSTEM_PRIVATE 
-						${GST_ROOT}/include 
-						${GST_ROOT}/include/gstreamer-1.0
-						${GST_ROOT}/include/glib-2.0
-						${GST_ROOT}/lib/gstreamer-1.0/include
-						${GST_ROOT}/lib/glib-2.0/include
-						${CINDER_INC_DIR}/cinder/linux )
+						"${GST_ROOT}include"
+						"${GST_ROOT}include\\gstreamer-1.0"
+						"${GST_ROOT}include\\glib-2.0"
+						"${GST_ROOT}lib\\gstreamer-1.0\\include"
+						"${GST_ROOT}lib\\glib-2.0\\include"
+						"${CINDER_INC_DIR}/cinder/linux" )
 
 			list( APPEND CINDER_SRC_FILES 
-						${CINDER_SRC_DIR}/cinder/linux/GstPlayer.cpp 
-						${CINDER_SRC_DIR}/cinder/linux/Movie.cpp )
+						"${CINDER_SRC_DIR}/cinder/linux/GstPlayer.cpp" 
+						"${CINDER_SRC_DIR}/cinder/linux/Movie.cpp" )
 
 			list( APPEND CINDER_DEFINES CINDER_MSW_USE_GSTREAMER )
 		else()
